@@ -1,0 +1,6 @@
+{
+  "name": "ShopCar",
+  "description": "Loja online moderna para compra, venda e financiamento de veículos novos e seminovos com catálogo interativo, filtros avançados e simulação de parcelas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

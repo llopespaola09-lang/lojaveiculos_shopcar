@@ -1,0 +1,45 @@
+{
+  "entities": {
+    "Vehicle": {
+      "title": "Vehicle",
+      "description": "Estoque de veículos da concessionária ShopCar",
+      "type": "object",
+      "properties": {
+        "brand": { "type": "string" },
+        "model": { "type": "string" },
+        "version": { "type": "string" },
+        "year": { "type": "number" },
+        "price": { "type": "number" },
+        "km": { "type": "number" },
+        "fuel": { "type": "string" },
+        "transmission": { "type": "string" },
+        "category": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "tag": { "type": "string" },
+        "featured": { "type": "boolean" }
+      }
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "Solicitações de proposta, test-drive e simulação",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "vehicleId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    }
+  },
+  "firestore": {
+    "/vehicles/{vehicleId}": {
+      "schema": { "$ref": "#/entities/Vehicle" },
+      "description": "Veículos em estoque"
+    },
+    "/leads/{leadId}": {
+      "schema": { "$ref": "#/entities/Lead" },
+      "description": "Leads de clientes e agendamentos"
+    }
+  }
+}

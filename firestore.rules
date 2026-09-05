@@ -1,0 +1,32 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Vehicles collection: public read, write allowed for inventory management
+    match /vehicles/{vehicleId} {
+      allow read, write: if true;
+    }
+    
+    // Leads / Financing proposals / Test drive requests / Selling quotes
+    match /leads/{leadId} {
+      allow read, write: if true;
+    }
+    
+    match /financing_simulations/{simulationId} {
+      allow read, write: if true;
+    }
+    
+    match /sell_evaluations/{evaluationId} {
+      allow read, write: if true;
+    }
+    
+    match /favorites/{favoriteId} {
+      allow read, write: if true;
+    }
+    
+    // Fallback rule
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
